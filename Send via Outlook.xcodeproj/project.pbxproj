@@ -308,13 +308,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TJ4KSJ69JS;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
 				GENERATE_PKGINFO_FILE = YES;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/PDF Services";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.sendviaoutlook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = pdfworkflow;
 			};
 			name = Debug;
@@ -324,13 +323,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = TJ4KSJ69JS;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
 				GENERATE_PKGINFO_FILE = YES;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/PDF Services";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.sendviaoutlook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = pdfworkflow;
 			};
 			name = Release;
