@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Send via Outlook
+
+  Created by Martin Lobger on 02/05/2018.
+  Copyright © 2018 ML-Consulting. All rights reserved.
+*/
+
+"alert.title" = "Der opstod en fejl under email af PDF via Outlook";

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Send via Outlook
+
+  Created by Martin Lobger on 02/05/2018.
+  Copyright © 2018 ML-Consulting. All rights reserved.
+*/
+
+"alert.title" = "An error occured sending PDF via Outlook";
+"alert.message.parameters" = "The number of parameters are incorrect.\nUsage: title options pdffile";
+"alert.message.filenotfound" = "Cannot find the file:\n{}";
