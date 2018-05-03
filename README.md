@@ -10,12 +10,13 @@ On macOS you can "print" to PDF. Among the options you have, is sending the prin
 
 It is however not easy to send the PDF via Outlook if that is the mail application you are using.
 
-This PDF Workflow will give you this option easy and hazzle free.
+This PDF Workflow will give you this option easy and hazzle free. It create a new mail message in Outlook and add the PDF document as an attachment. The subject will be the file name of your generated PDF document. Some applications is known to generate the PDF with the filename "Untitled.pdf" - I have no influence on this :(.
 
 ![Print Dialog](Images/Screenshot1.png)
 
 # Installing
-Download the latest release. Unzip it and move it the the "/Library/PDF Services" folder.
+Download SendViaOutlook.zip from the [latest release](https://github.com/MarLoe/pdfworkflow/releases/latest). Unzip it and move it to the "/Library/PDF Services" folder.
+
 Later I am hoping to add somthing a bit more automated ;)
 
 # Building
@@ -32,3 +33,5 @@ Acknowledgements
 Apple and macOS are registered trademarks of [Apple Inc.](http://apple.com)
 
 Microsoft and Outlook are registered trademarks of [Microsoft Corporation](http://microsoft.com)
+
+PDF is a registered trademark of [Adobe Systems Incorporated](http://adobe.com)
