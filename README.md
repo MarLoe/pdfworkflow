@@ -15,9 +15,7 @@ This PDF Workflow will give you this option easy and hazzle free. It create a ne
 ![Print Dialog](Images/Screenshot1.png) ![Outlook Mail](Images/Screenshot2.png) 
 
 # Installing
-Download SendViaOutlook.zip from the [latest release](https://github.com/MarLoe/pdfworkflow/releases/latest). Unzip it and move it to the "/Library/PDF Services" folder.
-
-Later I am hoping to add somthing a bit more automated ;)
+Download "Send via Outlook.pkg" from the [latest release](https://github.com/MarLoe/pdfworkflow/releases/latest). Run the installer and you are good to go. The "Send via Outlook.pdfworkflow" will be installed in the "/Library/PDF Services" folder and be available for all users on your machine.
 
 # Building
 Use Xcode 9 or later to build the PDF Workflow bundle.
@@ -30,6 +28,9 @@ License
 
 Acknowledgements
 ----------------
+
+[Packages Application](https://github.com/packagesdev/packages) by Stephane Sudre
+
 Apple and macOS are registered trademarks of [Apple Inc.](http://apple.com)
 
 Microsoft and Outlook are registered trademarks of [Microsoft Corporation](http://microsoft.com)
