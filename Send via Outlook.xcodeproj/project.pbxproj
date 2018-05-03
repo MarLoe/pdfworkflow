@@ -31,6 +31,8 @@
 /* Begin PBXFileReference section */
 		6D3685E6209A71520016A77C /* common.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = common.py; sourceTree = "<group>"; };
 		6DE509B9209A835D001C229E /* tool.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = tool.py; sourceTree = "<group>"; };
+		6DE7B5DD209B5ED300D0ECA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6DE7B5DE209B9E1A00D0ECA1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		BBA182F72099DBAD00BACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBA182F92099DBC300BACE5D /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBEC71E12099FADC00829FBA /* localizable.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = localizable.py; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		BBFCC2452099A0BF00685DCF = {
 			isa = PBXGroup;
 			children = (
+				6DE7B5DE209B9E1A00D0ECA1 /* Images */,
+				6DE7B5DD209B5ED300D0ECA1 /* README.md */,
 				BBFCC2502099A0BF00685DCF /* Send via Outlook */,
 				BBFCC24F2099A0BF00685DCF /* Products */,
 			);
