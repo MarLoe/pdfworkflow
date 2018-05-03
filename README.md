@@ -12,7 +12,7 @@ It is however not easy to send the PDF via Outlook if that is the mail applicati
 
 This PDF Workflow will give you this option easy and hazzle free. It create a new mail message in Outlook and add the PDF document as an attachment. The subject will be the file name of your generated PDF document. Some applications is known to generate the PDF with the filename "Untitled.pdf" - I have no influence on this :(.
 
-![Print Dialog](Images/Screenshot1.png)
+![Print Dialog](Images/Screenshot1.png) ![Outlook Mail](Images/Screenshot2.png) 
 
 # Installing
 Download SendViaOutlook.zip from the [latest release](https://github.com/MarLoe/pdfworkflow/releases/latest). Unzip it and move it to the "/Library/PDF Services" folder.
