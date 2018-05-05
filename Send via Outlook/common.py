@@ -14,17 +14,15 @@ from localizable import NSLocalizedString
 
 OSASCRIPT = "/usr/bin/osascript"
 
+def scriptPath(script):
+    return os.path.dirname(os.path.realpath(__file__)) + "/Scripts/{}.applescript".format(script)
+
+def alert(text, message):
+    os.system('"{}" "{}" "{}" "{}"'.format(OSASCRIPT, scriptPath("Alert"), text, message))
+
 def validateArgs(argv):
     if len(argv) < 3:
-        lines = [
-                 ' <<EOF',
-                 'set alertText to "{}"'.format(NSLocalizedString("alert.title")),
-                 'set alertMessage to "{}"'.format(NSLocalizedString("alert.message.parameters")),
-                 'display alert alertText message alertMessage as critical buttons {"OK"} default button "OK" -- cancel button "Cancel"',
-                 'EOF'
-                 ]
-        osaScript = "\n".join(lines)
-        os.system(OSASCRIPT + osaScript)
+        alert(NSLocalizedString("alert.title"), NSLocalizedString("alert.message.parameters"))
         sys.exit(1)
 
     paramTitle = argv[0]
@@ -32,34 +30,11 @@ def validateArgs(argv):
     paramFilePath = os.path.abspath(argv[2]) # Outlook can only handle absolute file paths
 
     if not os.path.isfile(paramFilePath):
-        lines = [
-                 ' <<EOF',
-                 'set alertText to "{}"'.format(NSLocalizedString("alert.title")),
-                 'set alertMessage to "{}"'.format(NSLocalizedString("alert.message.filenotfound").format(paramFilePath)),
-                 'display alert alertText message alertMessage as critical buttons {"OK"} default button "OK" -- cancel button "Cancel"',
-                 'EOF'
-                 ]
-        osaScript = "\n".join(lines)
-        os.system(OSASCRIPT + osaScript)
+        alert(NSLocalizedString("alert.title"), NSLocalizedString("alert.message.filenotfound").format(paramFilePath))
         sys.exit(2)
 
     return paramTitle, paramOptions, paramFilePath
 
 def executeOutlook(title, options, file):
-    lines = [
-             ' <<EOF',
-             'tell application "Microsoft Outlook"',
-             '    activate',
-             '    set subjectText to "{}"'.format(title),
-             '    set fileName to "{}" as POSIX file --convert to posix file'.format(file),
-             '    set theMessage to make new outgoing message with properties {subject:subjectText}',
-             '    tell theMessage -- tell theMessage (not theContent) to add the attachment',
-             '        make new attachment with properties {file:fileName}',
-             '    end tell',
-             '    open theMessage -- for further editing',
-             'end tell',
-             'EOF'
-             ]
-    osaScript = "\n".join(lines)
-    os.system(OSASCRIPT + osaScript)
+    os.system('"{}" "{}" "{}" "{}"'.format(OSASCRIPT, scriptPath("Send"), title, file))
 
