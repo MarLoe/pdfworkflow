@@ -10,7 +10,7 @@
 import sys
 import os.path
 
-import common 
+import common
 
 def main(argv):
     

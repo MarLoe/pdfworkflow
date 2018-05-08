@@ -1,0 +1,29 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: All debug Options",
+            "type": "python",
+            "request": "launch",
+            "pythonPath": "${config:python.pythonPath}",
+            "program": "${workspaceFolder}/Send via Outlook/send.tool.py", // "${file}",
+            "cwd" : "${workspaceFolder}/Send via Outlook",
+            // "module": "module.name",
+            // "env": {
+            //     "VAR": "value",
+            // },
+            // "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "This is the title",
+                "This is the options",
+                "../README.md",
+            ],
+            "debugOptions": [
+                "RedirectOutput"
+            ]
+        }
+    ]
+}
