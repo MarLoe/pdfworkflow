@@ -1,122 +1,48 @@
-# Adapted from Transifex: https://github.com/transifex/transifex/blob/master/transifex/resources/formats/strings.py
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
-# GPLv2
+#
+#  localizable.py
+#  Send via Outlook
+#
+#  Created by Martin Lobger on 08/05/2018.
+#  Copyright © 2018 ML-Consulting. All rights reserved.
 
-"""
-Apple strings file handler/compiler
-"""
+import os
 
-from __future__ import absolute_import
-import os, codecs, re, chardet
+def NSLocalizedStringFromTableInBundleWithIdentifier(key, table = None, bundleIdentifier = None):
+    
+    from Foundation import NSUserDefaults, NSBundle
 
-
-"""
-Handler for Apple STRINGS translation files.
-
-Apple strings files *must* be encoded in cls.ENCODING encoding.
-"""
-
-format_encoding = 'UTF-16'
-
-def _unescape_key(s):
-    return s.replace('\\\n', '')
-
-def _unescape(s):
-    s = s.replace('\\\n', '')
-    return s.replace('\\"', '"').replace(r'\n', '\n').replace(r'\r', '\r')
-
-def _get_content(filename=None, content=None):
-    if content is not None:
-        if chardet.detect(content)['encoding'].startswith(format_encoding):
-            encoding = format_encoding
-        else:
-            encoding = 'UTF-8'
-        if isinstance(content, str):
-            content.decode(encoding)
-        else:
-            return content
-    if filename is None:
-        return None
-    return _get_content_from_file(filename, format_encoding)
-
-def _get_content_from_file(filename, encoding):
-    f = open(filename, 'rb')
-    try:
-        content = f.read()
-        if chardet.detect(content)['encoding'].startswith(format_encoding):
-            #f = f.decode(format_encoding)
-            encoding = format_encoding
-        else:
-            #f = f.decode(default_encoding)
-            encoding = 'utf-8'
-        f.close()
-        f = codecs.open(filename, 'r', encoding=encoding)
-        return f.read()
-    except IOError as e:
-        print("Error opening file %s with encoding %s: %s" %\
-                (filename, format_encoding, e.message))
-    except Exception as e:
-        print("Unhandled exception: %s" % e.message)
-    finally:
-        f.close()
-
-def _parse_strings(content="", filename=None):
-    """Parse an apple .strings file and create a stringset with
-    all entries in the file.
-
-    See
-    http://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/StringsFiles.html
-    for details.
-    """
-    if filename is not None:
-        content = _get_content(filename=filename)
-
-    stringset = []
-    f = content
-    if f.startswith(u'\ufeff'):
-        f = f.lstrip(u'\ufeff')
-    #regex for finding all comments in a file
-    cp = r'(?:/\*(?P<comment>(?:[^*]|(?:\*+[^*/]))*\**)\*/)'
-    p = re.compile(r'(?:%s[ \t]*[\n]|[\r\n]|[\r]){0,1}(?P<line>(("(?P<key>[^"\\]*(?:\\.[^"\\]*)*)")|(?P<property>\w+))\s*=\s*"(?P<value>[^"\\]*(?:\\.[^"\\]*)*)"\s*;)'%cp, re.DOTALL|re.U)
-    #c = re.compile(r'\s*/\*(.|\s)*?\*/\s*', re.U)
-    c = re.compile(r'//[^\n]*\n|/\*(?:.|[\r\n])*?\*/', re.U)
-    ws = re.compile(r'\s+', re.U)
-    end=0
-    start = 0
-    for i in p.finditer(f):
-        start = i.start('line')
-        end_ = i.end()
-        key = i.group('key')
-        comment = i.group('comment') or ''
-        if not key:
-            key = i.group('property')
-        value = i.group('value')
-        while end < start:
-            m = c.match(f, end, start) or ws.match(f, end, start)
-            if not m or m.start() != end:
-                print("Invalid syntax: %s" %\
-                        f[end:start])
-            end = m.end()
-        end = end_
-        key = _unescape_key(key)
-        stringset.append({'key': key, 'value': _unescape(value), 'comment': comment})
-    return stringset
-
-
-def NSLocalizedString(key):
-    if not hasattr(NSLocalizedString, "strings"):
-        from Foundation import NSUserDefaults
+    # Since we are running in the "python" application, we cannot rely on localizations.
+    # We have to roll our own, starting by getting preferred availble languages.
+    if not hasattr(NSLocalizedStringFromTableInBundleWithIdentifier, "AppleLanguages"):
         standardUserDefaults = NSUserDefaults.standardUserDefaults()
         globalPreferences = standardUserDefaults.persistentDomainForName_(".GlobalPreferences")
-        country_codes = globalPreferences["AppleLanguages"]
-        for country_code in country_codes:
-            country_code = country_code.split("-")[0]
-            filename = "{}/{}.lproj/Localizable.strings".format(os.path.dirname(os.path.realpath(__file__)), country_code)
-            if os.path.isfile(filename):
-                NSLocalizedString.strings = _parse_strings(filename=filename)
-    result = [x for x in NSLocalizedString.strings if x["key"] == key]
-    if not result:
-        return ''
-    return result[0]["value"]
+        NSLocalizedStringFromTableInBundleWithIdentifier.AppleLanguages = globalPreferences["AppleLanguages"]
+
+    if not hasattr(NSLocalizedStringFromTableInBundleWithIdentifier, "bundles"):
+        NSLocalizedStringFromTableInBundleWithIdentifier.bundles = { }
+
+    # Let's cache the the bundles we encounter
+    if not NSLocalizedStringFromTableInBundleWithIdentifier.bundles.has_key(bundleIdentifier):
+        if not bundleIdentifier == None:
+            bundle = NSBundle.bundleWithIdentifier_(bundleIdentifier)
+        else:
+            # Find the bundle we (might) be in
+            filePath = os.path.dirname(os.path.realpath(__file__))
+            bundle = NSBundle.bundleWithPath_(filePath)
+        if bundle == None:
+            return key
+        NSLocalizedStringFromTableInBundleWithIdentifier.bundles[bundleIdentifier] = bundle
+    bundle = NSLocalizedStringFromTableInBundleWithIdentifier.bundles[bundleIdentifier]
+
+    for country_code in NSLocalizedStringFromTableInBundleWithIdentifier.AppleLanguages:
+        country_code = country_code.split("-")[0]
+        translatedText = bundle.localizedStringForKey_value_table_(key, "***_NOT_FOUND_***", "{}.lproj/{}".format(country_code, table))
+        if not translatedText == "***_NOT_FOUND_***":
+            return translatedText
+    
+    return bundle.localizedStringForKey_value_table_(key, key, table)
+
 
 

@@ -10,7 +10,7 @@
 import sys
 import os.path
 
-from localizable import NSLocalizedString
+from localizable import NSLocalizedStringFromTableInBundleWithIdentifier
 
 OSASCRIPT = "/usr/bin/osascript"
 
@@ -22,7 +22,7 @@ def alert(text, message):
 
 def validateArgs(argv):
     if len(argv) < 3:
-        alert(NSLocalizedString("alert.title"), NSLocalizedString("alert.message.parameters"))
+        alert(NSLocalizedStringFromTableInBundleWithIdentifier("alert.title"), NSLocalizedStringFromTableInBundleWithIdentifier("alert.message.parameters"))
         sys.exit(1)
 
     paramTitle = argv[0]
@@ -30,7 +30,7 @@ def validateArgs(argv):
     paramFilePath = os.path.abspath(argv[2]) # Outlook can only handle absolute file paths
 
     if not os.path.isfile(paramFilePath):
-        alert(NSLocalizedString("alert.title"), NSLocalizedString("alert.message.filenotfound").format(paramFilePath))
+        alert(NSLocalizedStringFromTableInBundleWithIdentifier("alert.title"), NSLocalizedStringFromTableInBundleWithIdentifier("alert.message.filenotfound").format(paramFilePath))
         sys.exit(2)
 
     return paramTitle, paramOptions, paramFilePath
