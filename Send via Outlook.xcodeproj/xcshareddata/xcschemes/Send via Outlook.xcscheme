@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0930"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "cp /Users/ml/Projects/pdfworkflow/Build/Products/Debug/Test.pdfworkflow.app.pdfworkflow /Library/PDF Services/Test.pdfworkflow">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "6D9D58D620C5D88E00090087"
+                     BuildableName = "Send via Outlook.pdfworkflow"
+                     BlueprintName = "Send via Outlook"
+                     ReferencedContainer = "container:Send via Outlook.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,7 +32,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BBFCC24D2099A0BF00685DCF"
+               BlueprintIdentifier = "6D9D58D620C5D88E00090087"
                BuildableName = "Send via Outlook.pdfworkflow"
                BlueprintName = "Send via Outlook"
                ReferencedContainer = "container:Send via Outlook.xcodeproj">
@@ -29,37 +47,39 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6D9D58D620C5D88E00090087"
+            BuildableName = "Send via Outlook.pdfworkflow"
+            BlueprintName = "Send via Outlook"
+            ReferencedContainer = "container:Send via Outlook.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "NO">
-      <PathRunnable
-         runnableDebuggingMode = "0"
-         FilePath = "/usr/bin/python">
-      </PathRunnable>
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BBFCC24D2099A0BF00685DCF"
+            BlueprintIdentifier = "6D9D58D620C5D88E00090087"
             BuildableName = "Send via Outlook.pdfworkflow"
             BlueprintName = "Send via Outlook"
             ReferencedContainer = "container:Send via Outlook.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <CommandLineArguments>
-         <CommandLineArgument
-            argument = "&quot;$(BUILT_PRODUCTS_DIR)/$(CONTENTS_FOLDER_PATH)/Resources/tool&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
          <CommandLineArgument
             argument = "&quot;This is the title&quot;"
             isEnabled = "YES">
@@ -69,8 +89,16 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "$(SRCROOT)/README.md"
+            argument = "../../../README.md"
             isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "../../README.md"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "$(SRCROOT)/README.md"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
@@ -82,15 +110,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BBFCC24D2099A0BF00685DCF"
-            BuildableName = "Send via Outlook.pdfworkflow"
-            BlueprintName = "Send via Outlook"
-            ReferencedContainer = "container:Send via Outlook.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

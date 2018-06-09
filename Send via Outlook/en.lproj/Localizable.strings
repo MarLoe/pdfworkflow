@@ -8,4 +8,6 @@
 
 "alert.title" = "An error occured sending PDF via Outlook";
 "alert.message.parameters" = "The number of parameters are incorrect.\nUsage: title options pdffile";
-"alert.message.filenotfound" = "Cannot find the file:\n{}";
+"alert.message.filenotfound" = "Cannot find the file:\n%@";
+
+"window.title"="Send via Outlook";
