@@ -7,45 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D3685E7209A71520016A77C /* common.py in Resources */ = {isa = PBXBuildFile; fileRef = 6D3685E6209A71520016A77C /* common.py */; };
-		6D848AFF209E440B00060FD7 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6D848AFE209E440B00060FD7 /* Scripts */; };
-		6DE509BA209A835D001C229E /* send.tool.py in Resources */ = {isa = PBXBuildFile; fileRef = 6DE509B9209A835D001C229E /* send.tool.py */; };
-		BBA182F62099DBAD00BACE5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBA182F82099DBAD00BACE5D /* InfoPlist.strings */; };
-		BBEC71E22099FADC00829FBA /* localizable.py in Resources */ = {isa = PBXBuildFile; fileRef = BBEC71E12099FADC00829FBA /* localizable.py */; };
-		BBEC71E52099FB8400829FBA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBEC71E72099FB8400829FBA /* Localizable.strings */; };
+		6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */; };
+		6D3E789420C742190068D66D /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6D848AFE209E440B00060FD7 /* Scripts */; };
+		6D3E789720C861460068D66D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBEC71E72099FB8400829FBA /* Localizable.strings */; };
+		6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBA182F82099DBAD00BACE5D /* InfoPlist.strings */; };
+		6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */; };
+		6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E789820C876810068D66D /* Main.storyboard */; };
+		6D3E78A820C886770068D66D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DD20C5D88E00090087 /* MainViewController.m */; };
+		6D3E78AB20C890530068D66D /* MainApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E78AA20C890530068D66D /* MainApplication.m */; };
+		6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D9D58DF20C5D88F00090087 /* Assets.xcassets */; };
+		6D9D58EB20C5D89C00090087 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D50789020AA0CB900EFB987 /* main.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		BBFCC2802099B0C800685DCF /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.tool.py";
-			fileType = pattern.proxy;
-			isEditable = 1;
-			outputFiles = (
-				"$(DERIVED_FILE_DIR)/tool",
-			);
-			script = "cp -a \"$INPUT_FILE_PATH\" \"$DERIVED_FILE_DIR/tool\"\n\nchmod +x \"$DERIVED_FILE_DIR/tool\"";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
-		6D3685E6209A71520016A77C /* common.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = common.py; sourceTree = "<group>"; };
+		6D20EB7320CB1DEE00CACEE1 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
+		6D20EB7620CC05EA00CACEE1 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = System/Library/Frameworks/AppleScriptKit.framework; sourceTree = SDKROOT; };
+		6D3E789020C740910068D66D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		6D3E789220C741470068D66D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6D3E789820C876810068D66D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6D3E78A920C890530068D66D /* MainApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplication.h; sourceTree = "<group>"; };
+		6D3E78AA20C890530068D66D /* MainApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplication.m; sourceTree = "<group>"; };
+		6D50789020AA0CB900EFB987 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D848AFE209E440B00060FD7 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
-		6DE509B9209A835D001C229E /* send.tool.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = send.tool.py; sourceTree = "<group>"; };
+		6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D9D58D920C5D88E00090087 /* MainApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplicationDelegate.h; sourceTree = "<group>"; };
+		6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplicationDelegate.m; sourceTree = "<group>"; };
+		6D9D58DC20C5D88E00090087 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6D9D58DD20C5D88E00090087 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		6D9D58DF20C5D88F00090087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D9D58E420C5D88F00090087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DE7B5DD209B5ED300D0ECA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DE7B5DE209B9E1A00D0ECA1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		BBA182F72099DBAD00BACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBA182F92099DBC300BACE5D /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BBEC71E12099FADC00829FBA /* localizable.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = localizable.py; sourceTree = "<group>"; };
 		BBEC71E62099FB8400829FBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BBEC71E82099FB8600829FBA /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BBFCC24E2099A0BF00685DCF /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBFCC2512099A0BF00685DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BBFCC24B2099A0BF00685DCF /* Frameworks */ = {
+		6D9D58D420C5D88E00090087 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3E788F20C740900068D66D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D20EB7620CC05EA00CACEE1 /* AppleScriptKit.framework */,
+				6D3E789220C741470068D66D /* Foundation.framework */,
+				6D3E789020C740910068D66D /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBFCC2452099A0BF00685DCF = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +73,14 @@
 				6DE7B5DD209B5ED300D0ECA1 /* README.md */,
 				BBFCC2502099A0BF00685DCF /* Send via Outlook */,
 				BBFCC24F2099A0BF00685DCF /* Products */,
+				6D3E788F20C740900068D66D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		BBFCC24F2099A0BF00685DCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBFCC24E2099A0BF00685DCF /* Send via Outlook.pdfworkflow */,
+				6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +89,20 @@
 			isa = PBXGroup;
 			children = (
 				6D848AFE209E440B00060FD7 /* Scripts */,
-				BBFCC2512099A0BF00685DCF /* Info.plist */,
 				BBA182F82099DBAD00BACE5D /* InfoPlist.strings */,
-				6DE509B9209A835D001C229E /* send.tool.py */,
-				6D3685E6209A71520016A77C /* common.py */,
-				BBEC71E12099FADC00829FBA /* localizable.py */,
 				BBEC71E72099FB8400829FBA /* Localizable.strings */,
+				6D50789020AA0CB900EFB987 /* main.m */,
+				6D9D58E420C5D88F00090087 /* Info.plist */,
+				6D3E78A920C890530068D66D /* MainApplication.h */,
+				6D3E78AA20C890530068D66D /* MainApplication.m */,
+				6D9D58D920C5D88E00090087 /* MainApplicationDelegate.h */,
+				6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */,
+				6D20EB7320CB1DEE00CACEE1 /* MainWindow.h */,
+				6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */,
+				6D9D58DC20C5D88E00090087 /* MainViewController.h */,
+				6D9D58DD20C5D88E00090087 /* MainViewController.m */,
+				6D9D58DF20C5D88F00090087 /* Assets.xcassets */,
+				6D3E789820C876810068D66D /* Main.storyboard */,
 			);
 			path = "Send via Outlook";
 			sourceTree = "<group>";
@@ -90,23 +110,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBFCC24D2099A0BF00685DCF /* Send via Outlook */ = {
+		6D9D58D620C5D88E00090087 /* Send via Outlook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBFCC2542099A0BF00685DCF /* Build configuration list for PBXNativeTarget "Send via Outlook" */;
+			buildConfigurationList = 6D9D58EA20C5D88F00090087 /* Build configuration list for PBXNativeTarget "Send via Outlook" */;
 			buildPhases = (
-				BBFCC24A2099A0BF00685DCF /* Sources */,
-				BBFCC24B2099A0BF00685DCF /* Frameworks */,
-				BBFCC24C2099A0BF00685DCF /* Resources */,
+				6D9D58D320C5D88E00090087 /* Sources */,
+				6D9D58D420C5D88E00090087 /* Frameworks */,
+				6D9D58D520C5D88E00090087 /* Resources */,
+				6D3E789F20C87CB30068D66D /* ShellScript */,
 			);
 			buildRules = (
-				BBFCC2802099B0C800685DCF /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
 			name = "Send via Outlook";
-			productName = "Send via Outlook";
-			productReference = BBFCC24E2099A0BF00685DCF /* Send via Outlook.pdfworkflow */;
-			productType = "com.apple.product-type.bundle";
+			productName = Test;
+			productReference = 6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -117,8 +137,13 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "ML-Consulting";
 				TargetAttributes = {
-					BBFCC24D2099A0BF00685DCF = {
-						CreatedOnToolsVersion = 9.3;
+					6D9D58D620C5D88E00090087 = {
+						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -129,38 +154,61 @@
 			knownRegions = (
 				en,
 				da,
+				Base,
 			);
 			mainGroup = BBFCC2452099A0BF00685DCF;
 			productRefGroup = BBFCC24F2099A0BF00685DCF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBFCC24D2099A0BF00685DCF /* Send via Outlook */,
+				6D9D58D620C5D88E00090087 /* Send via Outlook */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BBFCC24C2099A0BF00685DCF /* Resources */ = {
+		6D9D58D520C5D88E00090087 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE509BA209A835D001C229E /* send.tool.py in Resources */,
-				BBEC71E52099FB8400829FBA /* Localizable.strings in Resources */,
-				BBA182F62099DBAD00BACE5D /* InfoPlist.strings in Resources */,
-				6D848AFF209E440B00060FD7 /* Scripts in Resources */,
-				6D3685E7209A71520016A77C /* common.py in Resources */,
-				BBEC71E22099FADC00829FBA /* localizable.py in Resources */,
+				6D3E789720C861460068D66D /* Localizable.strings in Resources */,
+				6D3E789420C742190068D66D /* Scripts in Resources */,
+				6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */,
+				6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */,
+				6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D3E789F20C87CB30068D66D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/tool",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		BBFCC24A2099A0BF00685DCF /* Sources */ = {
+		6D9D58D320C5D88E00090087 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3E78AB20C890530068D66D /* MainApplication.m in Sources */,
+				6D3E78A820C886770068D66D /* MainViewController.m in Sources */,
+				6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */,
+				6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */,
+				6D9D58EB20C5D89C00090087 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +236,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6D9D58E820C5D88F00090087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = pdfworkflow;
+			};
+			name = Debug;
+		};
+		6D9D58E920C5D88F00090087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = pdfworkflow;
+			};
+			name = Release;
+		};
 		BBFCC2522099A0BF00685DCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -299,53 +385,23 @@
 			};
 			name = Release;
 		};
-		BBFCC2552099A0BF00685DCF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38G5P3YVC2;
-				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = "Send via Outlook/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/PDF Services";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.sendviaoutlook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = pdfworkflow;
-			};
-			name = Debug;
-		};
-		BBFCC2562099A0BF00685DCF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 38G5P3YVC2;
-				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = "Send via Outlook/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/PDF Services";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.sendviaoutlook;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = pdfworkflow;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D9D58EA20C5D88F00090087 /* Build configuration list for PBXNativeTarget "Send via Outlook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D9D58E820C5D88F00090087 /* Debug */,
+				6D9D58E920C5D88F00090087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BBFCC2492099A0BF00685DCF /* Build configuration list for PBXProject "Send via Outlook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBFCC2522099A0BF00685DCF /* Debug */,
 				BBFCC2532099A0BF00685DCF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BBFCC2542099A0BF00685DCF /* Build configuration list for PBXNativeTarget "Send via Outlook" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BBFCC2552099A0BF00685DCF /* Debug */,
-				BBFCC2562099A0BF00685DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

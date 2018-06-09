@@ -7,3 +7,7 @@
 */
 
 "alert.title" = "Der opstod en fejl under email af PDF via Outlook";
+"alert.message.parameters" = "Antallet af parametre er forkert.\nFormat: titel options pdffile";
+"alert.message.filenotfound" = "Kan ikke finde filen:\n%@";
+
+"window.title"="Email via Outlook";
