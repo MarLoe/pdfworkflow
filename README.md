@@ -1,4 +1,4 @@
-PDF Send via Outlook
+![AppIcon](Send%20via%20Outlook/Assets.xcassets/AppIcon.appiconset/icon32.png) PDF Send via Outlook
 ====
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MarLoe/pdfworkflow/blob/master/LICENSE)
@@ -6,7 +6,7 @@ PDF Send via Outlook
 Send your documents as PDF via Microsoft Outlook.
 
 # Introduction
-On macOS you can "print" to PDF. Among the options you have, is sending the print as PDF using Apple Mail application.
+On MacOS you can "print" to PDF. Among the options you have, is sending the print as PDF using Apple Mail application.
 
 It is however not easy to send the PDF via Outlook if that is the mail application you are using.
 
