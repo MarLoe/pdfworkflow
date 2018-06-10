@@ -661,6 +661,12 @@
 						<key>VALUE</key>
 						<string>Send via Outlook</string>
 					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>Danish</string>
+						<key>VALUE</key>
+						<string>Email via Outlook</string>
+					</dict>
 				</array>
 			</dict>
 		</dict>
