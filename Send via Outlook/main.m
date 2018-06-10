@@ -110,7 +110,7 @@ int main(int argc, const char* argv[])
     }
     
     NSDictionary* errorDict;
-    NSURL* sendScriptUrl = [[NSBundle mainBundle] URLForResource:@"Send" withExtension:@"applescript" subdirectory:@"Scripts"];
+    NSURL* sendScriptUrl = [[NSBundle mainBundle] URLForResource:@"Send" withExtension:@"scpt" subdirectory:@"Scripts"];
     NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:sendScriptUrl error:&errorDict];
     if (appleScript != nil)
     {

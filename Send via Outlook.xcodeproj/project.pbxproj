@@ -8,16 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */; };
-		6D3E789420C742190068D66D /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 6D848AFE209E440B00060FD7 /* Scripts */; };
 		6D3E789720C861460068D66D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBEC71E72099FB8400829FBA /* Localizable.strings */; };
 		6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBA182F82099DBAD00BACE5D /* InfoPlist.strings */; };
 		6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */; };
 		6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E789820C876810068D66D /* Main.storyboard */; };
 		6D3E78A820C886770068D66D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DD20C5D88E00090087 /* MainViewController.m */; };
 		6D3E78AB20C890530068D66D /* MainApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E78AA20C890530068D66D /* MainApplication.m */; };
+		6D76335720CD9E75003175E1 /* Send.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 6D76335620CD9E75003175E1 /* Send.applescript */; };
 		6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D9D58DF20C5D88F00090087 /* Assets.xcassets */; };
 		6D9D58EB20C5D89C00090087 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D50789020AA0CB900EFB987 /* main.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		6D76335220CD9C5F003175E1 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.applescript";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(TARGET_BUILD_DIR)/$(SCRIPTS_FOLDER_PATH)/$(INPUT_FILE_BASE).scpt",
+			);
+			script = "/usr/bin/osacompile -o \"$SCRIPT_OUTPUT_FILE_0\" \"$SCRIPT_INPUT_FILE\"";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		6D20EB7320CB1DEE00CACEE1 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
@@ -29,7 +43,7 @@
 		6D3E78A920C890530068D66D /* MainApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplication.h; sourceTree = "<group>"; };
 		6D3E78AA20C890530068D66D /* MainApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplication.m; sourceTree = "<group>"; };
 		6D50789020AA0CB900EFB987 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D848AFE209E440B00060FD7 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
+		6D76335620CD9E75003175E1 /* Send.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = Send.applescript; sourceTree = "<group>"; };
 		6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9D58D920C5D88E00090087 /* MainApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplicationDelegate.h; sourceTree = "<group>"; };
 		6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplicationDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +80,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D76335520CD9E75003175E1 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6D76335620CD9E75003175E1 /* Send.applescript */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		BBFCC2452099A0BF00685DCF = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +110,7 @@
 		BBFCC2502099A0BF00685DCF /* Send via Outlook */ = {
 			isa = PBXGroup;
 			children = (
-				6D848AFE209E440B00060FD7 /* Scripts */,
+				6D76335520CD9E75003175E1 /* Scripts */,
 				BBA182F82099DBAD00BACE5D /* InfoPlist.strings */,
 				BBEC71E72099FB8400829FBA /* Localizable.strings */,
 				6D50789020AA0CB900EFB987 /* main.m */,
@@ -120,6 +142,7 @@
 				6D3E789F20C87CB30068D66D /* ShellScript */,
 			);
 			buildRules = (
+				6D76335220CD9C5F003175E1 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -172,7 +195,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3E789720C861460068D66D /* Localizable.strings in Resources */,
-				6D3E789420C742190068D66D /* Scripts in Resources */,
 				6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */,
 				6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */,
 				6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */,
@@ -207,6 +229,7 @@
 				6D3E78AB20C890530068D66D /* MainApplication.m in Sources */,
 				6D3E78A820C886770068D66D /* MainViewController.m in Sources */,
 				6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */,
+				6D76335720CD9E75003175E1 /* Send.applescript in Sources */,
 				6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */,
 				6D9D58EB20C5D89C00090087 /* main.m in Sources */,
 			);
