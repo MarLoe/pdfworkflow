@@ -109,6 +109,19 @@ int main(int argc, const char* argv[])
         return 3;
     }
     
+    // Check if filename is "Untitled"
+    // If so we want to give the user a change to change it
+    NSBundle* appKitBundle = [NSBundle bundleWithIdentifier:@"com.apple.AppKit"];
+    NSString* untitledTitle = NSLocalizedStringFromTableInBundle(@"Untitled", @"Document", appKitBundle, -);
+    untitledTitle = [untitledTitle.lowercaseString stringByAppendingString:@".pdf"];
+    if ([untitledTitle isEqualToString:paramTitle.lowercaseString] || [untitledTitle isEqualToString:paramFilePath.lastPathComponent.lowercaseString])
+    {
+        NSLog(@"OUTLOOK TITLE: %@", paramTitle);
+        NSLog(@"OUTLOOK PATH: %@", paramFilePath);
+        NSLog(@"OUTLOOK OPTIONS: %s", argv[2]);
+    }
+
+    
     NSDictionary* errorDict;
     NSURL* sendScriptUrl = [[NSBundle mainBundle] URLForResource:@"Send" withExtension:@"scpt" subdirectory:@"Scripts"];
     NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:sendScriptUrl error:&errorDict];
