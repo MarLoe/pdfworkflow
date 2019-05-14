@@ -29,7 +29,7 @@
 			outputFiles = (
 				"$(TARGET_BUILD_DIR)/$(SCRIPTS_FOLDER_PATH)/$(INPUT_FILE_BASE).scpt",
 			);
-			script = "/usr/bin/osacompile -o \"$SCRIPT_OUTPUT_FILE_0\" \"$SCRIPT_INPUT_FILE\"";
+			script = "/usr/bin/osacompile -o \"$SCRIPT_OUTPUT_FILE_0\" \"$SCRIPT_INPUT_FILE\"\n";
 		};
 /* End PBXBuildRule section */
 
