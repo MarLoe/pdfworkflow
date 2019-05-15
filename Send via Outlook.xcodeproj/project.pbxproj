@@ -139,7 +139,8 @@
 				6D9D58D320C5D88E00090087 /* Sources */,
 				6D9D58D420C5D88E00090087 /* Frameworks */,
 				6D9D58D520C5D88E00090087 /* Resources */,
-				6D3E789F20C87CB30068D66D /* ShellScript */,
+				6D3E789F20C87CB30068D66D /* Run Script - tool */,
+				6DD58E9A228CD6500034117D /* Run Script - quicklook */,
 			);
 			buildRules = (
 				6D76335220CD9C5F003175E1 /* PBXBuildRule */,
@@ -204,20 +205,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D3E789F20C87CB30068D66D /* ShellScript */ = {
+		6D3E789F20C87CB30068D66D /* Run Script - tool */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script - tool";
 			outputPaths = (
 				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/tool",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ln -sfv \"/Library/PDF Services/${EXECUTABLE_NAME}.pdfworkflow/Contents/MacOS/${EXECUTABLE_NAME}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n\n";
+			shellScript = "ln -sfv \"/Library/PDF Services/${EXECUTABLE_NAME}.pdfworkflow/Contents/MacOS/${EXECUTABLE_NAME}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6DD58E9A228CD6500034117D /* Run Script - quicklook */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/AppIcon.icns",
+			);
+			name = "Run Script - quicklook";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Preview.icns",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Thumbnail.icns",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\ncp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_1}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
