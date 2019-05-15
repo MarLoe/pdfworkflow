@@ -908,7 +908,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<false/>
 				<key>VERSION</key>
-				<string>1.2.0</string>
+				<string>1.2.1</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -922,6 +922,17 @@
 		<dict>
 			<key>NOTES</key>
 			<data>
+			PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBIVE1M
+			IDQuMDEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIvaHRtbDQv
+			c3RyaWN0LmR0ZCI+CjxodG1sPgo8aGVhZD4KPG1ldGEgaHR0cC1l
+			cXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+			IGNoYXJzZXQ9VVRGLTgiPgo8bWV0YSBodHRwLWVxdWl2PSJDb250
+			ZW50LVN0eWxlLVR5cGUiIGNvbnRlbnQ9InRleHQvY3NzIj4KPHRp
+			dGxlPjwvdGl0bGU+CjxtZXRhIG5hbWU9IkdlbmVyYXRvciIgY29u
+			dGVudD0iQ29jb2EgSFRNTCBXcml0ZXIiPgo8bWV0YSBuYW1lPSJD
+			b2NvYVZlcnNpb24iIGNvbnRlbnQ9IjE2NzEuNCI+CjxzdHlsZSB0
+			eXBlPSJ0ZXh0L2NzcyI+Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+
+			CjwvYm9keT4KPC9odG1sPgo=
 			</data>
 		</dict>
 		<key>PROJECT_PRESENTATION</key>
