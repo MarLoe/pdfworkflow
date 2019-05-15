@@ -17,26 +17,26 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"SEND VIA OUTLOOK: %@", NSStringFromSelector(_cmd));
 }
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
     // Insert code here to tear down your application
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"SEND VIA OUTLOOK: %@", NSStringFromSelector(_cmd));
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"SEND VIA OUTLOOK: %@", NSStringFromSelector(_cmd));
     return YES;
 }
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
     // Intercept command line arguments - and do nothing
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"SEND VIA OUTLOOK: %@", NSStringFromSelector(_cmd));
 }
 
 @end

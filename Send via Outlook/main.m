@@ -30,7 +30,7 @@ NSModalResponse show_alert(NSString* title, NSString* message, NSAlertStyle aler
     alert.messageText = title;
     alert.informativeText = message;
     alert.alertStyle = alertStyle;
-    NSLog(@"%@", alert.icon);
+    NSLog(@"SEND VIA OUTLOOK: %@", alert.icon);
     if ([[NSBundle mainBundle] bundleIdentifier] == nil)
     {
         // We are running as a command line tool - we need to load icon manually
@@ -143,7 +143,7 @@ int main(int argc, const char* argv[])
         // call the event in AppleScript
         if (![appleScript executeAppleEvent:event error:&errorDict])
         {
-            NSLog(@"ERROR: %@", errorDict);
+            NSLog(@"SEND VIA OUTLOOK ERROR: %@", errorDict);
             // report any errors from 'errors'
             NSString* errorMessage = errorDict[NSAppleScriptErrorMessage];
             if (errorMessage != nil)

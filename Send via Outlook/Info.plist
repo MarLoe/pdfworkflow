@@ -27,7 +27,7 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSAppleEventsUsageDescription</key>
-	<string>Please give access to email file using Microsoft Outlook.</string>
+	<string>Please allow access to Microsoft Outlook so a new email with the file can be composed.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2019 ML-Consulting. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
