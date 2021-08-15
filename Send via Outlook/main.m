@@ -59,7 +59,7 @@ NSModalResponse show_error(NSString* title, NSString* errorMessage)
     return show_alert(title, errorMessage, NSAlertStyleCritical);
 }
 
-NSModalResponse show_config()
+NSModalResponse show_config(void)
 {
     // As we are running as a command line tool,
     // we need to do everything our selfs.
