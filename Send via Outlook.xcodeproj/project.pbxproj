@@ -213,6 +213,7 @@
 			files = (
 			);
 			inputPaths = (
+				"${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}",
 			);
 			name = "Run Script - tool";
 			outputPaths = (
@@ -220,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ln -sfv \"/Library/PDF Services/${EXECUTABLE_NAME}.pdfworkflow/Contents/MacOS/${EXECUTABLE_NAME}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "# For the PDF WrokFlow to work, there must be an executable called \"tool\" in the \"Resources\" folder\ncp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6DD58E9A228CD6500034117D /* Run Script - quicklook */ = {
@@ -294,6 +295,7 @@
 				DEVELOPMENT_TEAM = 38G5P3YVC2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				INSTALL_PATH = "\"~/Library/PDF Services\"";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -314,6 +316,7 @@
 				DEVELOPMENT_TEAM = 38G5P3YVC2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				INSTALL_PATH = "\"~/Library/PDF Services\"";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
