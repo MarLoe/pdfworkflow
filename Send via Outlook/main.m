@@ -8,9 +8,6 @@
 
 @import Foundation;
 @import AppKit;
-#include "MainApplication.h"
-#include "MainApplicationDelegate.h"
-
 
 #ifndef kASAppleScriptSuite
 #define kASAppleScriptSuite 'ascr'
@@ -57,28 +54,6 @@ NSModalResponse show_warn(NSString* title, NSString* message)
 NSModalResponse show_error(NSString* title, NSString* errorMessage)
 {
     return show_alert(title, errorMessage, NSAlertStyleCritical);
-}
-
-NSModalResponse show_config(void)
-{
-    // As we are running as a command line tool,
-    // we need to do everything our selfs.
-    MainApplicationDelegate* delegate = [[MainApplicationDelegate alloc] init];
-    MainApplication* app = [MainApplication sharedApplication];
-    app.delegate = delegate;
-    
-    NSStoryboard* storyBoard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    NSWindowController* initial = [storyBoard instantiateInitialController];
-    [initial.window center];
-    [initial.window makeKeyAndOrderFront:nil];
-    
-    [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
-    [NSApp activateIgnoringOtherApps:YES];
-    
-    [app run];
-    
-    return NSModalResponseOK; // NSModalResponseCancel
 }
 
 int main(int argc, const char* argv[])

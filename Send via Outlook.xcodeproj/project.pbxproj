@@ -7,13 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */; };
 		6D3E789720C861460068D66D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBEC71E72099FB8400829FBA /* Localizable.strings */; };
 		6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBA182F82099DBAD00BACE5D /* InfoPlist.strings */; };
-		6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */; };
-		6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3E789820C876810068D66D /* Main.storyboard */; };
-		6D3E78A820C886770068D66D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D58DD20C5D88E00090087 /* MainViewController.m */; };
-		6D3E78AB20C890530068D66D /* MainApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E78AA20C890530068D66D /* MainApplication.m */; };
 		6D76335720CD9E75003175E1 /* Send.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 6D76335620CD9E75003175E1 /* Send.applescript */; };
 		6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D9D58DF20C5D88F00090087 /* Assets.xcassets */; };
 		6D9D58EB20C5D89C00090087 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D50789020AA0CB900EFB987 /* main.m */; };
@@ -37,21 +32,12 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		6D20EB7320CB1DEE00CACEE1 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
-		6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindow.m; sourceTree = "<group>"; };
 		6D20EB7620CC05EA00CACEE1 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = System/Library/Frameworks/AppleScriptKit.framework; sourceTree = SDKROOT; };
 		6D3E789020C740910068D66D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6D3E789220C741470068D66D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6D3E789820C876810068D66D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6D3E78A920C890530068D66D /* MainApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplication.h; sourceTree = "<group>"; };
-		6D3E78AA20C890530068D66D /* MainApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplication.m; sourceTree = "<group>"; };
 		6D50789020AA0CB900EFB987 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D76335620CD9E75003175E1 /* Send.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = Send.applescript; sourceTree = "<group>"; };
 		6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D9D58D920C5D88E00090087 /* MainApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainApplicationDelegate.h; sourceTree = "<group>"; };
-		6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainApplicationDelegate.m; sourceTree = "<group>"; };
-		6D9D58DC20C5D88E00090087 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		6D9D58DD20C5D88E00090087 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6D9D58DF20C5D88F00090087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D9D58E420C5D88F00090087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DE7B5DD209B5ED300D0ECA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -118,16 +104,7 @@
 				BBEC71E72099FB8400829FBA /* Localizable.strings */,
 				6D50789020AA0CB900EFB987 /* main.m */,
 				6D9D58E420C5D88F00090087 /* Info.plist */,
-				6D3E78A920C890530068D66D /* MainApplication.h */,
-				6D3E78AA20C890530068D66D /* MainApplication.m */,
-				6D9D58D920C5D88E00090087 /* MainApplicationDelegate.h */,
-				6D9D58DA20C5D88E00090087 /* MainApplicationDelegate.m */,
-				6D20EB7320CB1DEE00CACEE1 /* MainWindow.h */,
-				6D20EB7420CB1DEE00CACEE1 /* MainWindow.m */,
-				6D9D58DC20C5D88E00090087 /* MainViewController.h */,
-				6D9D58DD20C5D88E00090087 /* MainViewController.m */,
 				6D9D58DF20C5D88F00090087 /* Assets.xcassets */,
-				6D3E789820C876810068D66D /* Main.storyboard */,
 			);
 			path = "Send via Outlook";
 			sourceTree = "<group>";
@@ -200,7 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D3E789720C861460068D66D /* Localizable.strings in Resources */,
-				6D3E78A720C884DE0068D66D /* Main.storyboard in Resources */,
 				6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */,
 				6D3E789B20C87A030068D66D /* InfoPlist.strings in Resources */,
 			);
@@ -254,11 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D3E78AB20C890530068D66D /* MainApplication.m in Sources */,
-				6D3E78A820C886770068D66D /* MainViewController.m in Sources */,
-				6D20EB7520CB1DEE00CACEE1 /* MainWindow.m in Sources */,
 				6D76335720CD9E75003175E1 /* Send.applescript in Sources */,
-				6D3E78A520C882670068D66D /* MainApplicationDelegate.m in Sources */,
 				6D9D58EB20C5D89C00090087 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
