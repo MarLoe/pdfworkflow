@@ -283,7 +283,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Thumbnail.icns",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Preview.icns",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
