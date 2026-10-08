@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "cp /Users/ml/Projects/pdfworkflow/Build/Products/Debug/Test.pdfworkflow.app.pdfworkflow /Library/PDF Services/Test.pdfworkflow">
+               scriptText = "cp -R &quot;${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}&quot; &quot;${HOME}/Library/PDF Services/${FULL_PRODUCT_NAME}&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
