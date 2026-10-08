@@ -8,6 +8,9 @@
 
 @import Foundation;
 @import AppKit;
+#include "MainApplication.h"
+#include "MainApplicationDelegate.h"
+
 
 #import "alert.h"
 
@@ -27,6 +30,15 @@
 
 int main(int argc, const char* argv[])
 {
+    @autoreleasepool {
+        MainApplication *app = [MainApplication sharedApplication];
+        MainApplicationDelegate *delegate = [[MainApplicationDelegate alloc] init];
+        app.delegate = delegate;
+        [app run];
+    }
+    
+    return 0;
+    
     if (argc <= 3)
     {
         show_error(NSLocalizedString(@"alert.title", -), NSLocalizedString(@"alert.message.parameters", -));
