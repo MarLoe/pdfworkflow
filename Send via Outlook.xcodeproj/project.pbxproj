@@ -12,6 +12,8 @@
 		6D76335720CD9E75003175E1 /* Send.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 6D76335620CD9E75003175E1 /* Send.applescript */; };
 		6D9D58E020C5D88F00090087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D9D58DF20C5D88F00090087 /* Assets.xcassets */; };
 		6D9D58EB20C5D89C00090087 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D50789020AA0CB900EFB987 /* main.m */; };
+		6DA7C5A83077878200D68C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D50789020AA0CB900EFB987 /* main.m */; };
+		6DA7C5AF30778B6800D68C8D /* tool in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DA7C5A1307786E000D68C8D /* tool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -31,6 +33,38 @@
 		};
 /* End PBXBuildRule section */
 
+/* Begin PBXContainerItemProxy section */
+		6DA7C5AA307789D500D68C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBFCC2462099A0BF00685DCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DA7C5A0307786E000D68C8D;
+			remoteInfo = tool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DA7C59F307786E000D68C8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		6DA7C5AE30778B5E00D68C8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				6DA7C5AF30778B6800D68C8D /* tool in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6D20EB7620CC05EA00CACEE1 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = System/Library/Frameworks/AppleScriptKit.framework; sourceTree = SDKROOT; };
 		6D3E789020C740910068D66D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -40,6 +74,7 @@
 		6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D9D58DF20C5D88F00090087 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D9D58E420C5D88F00090087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DA7C5A1307786E000D68C8D /* tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tool; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE7B5DD209B5ED300D0ECA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DE7B5DE209B9E1A00D0ECA1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		BBA182F72099DBAD00BACE5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -50,6 +85,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		6D9D58D420C5D88E00090087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7C59E307786E000D68C8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */,
+				6DA7C5A1307786E000D68C8D /* tool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +162,7 @@
 				6D9D58D320C5D88E00090087 /* Sources */,
 				6D9D58D420C5D88E00090087 /* Frameworks */,
 				6D9D58D520C5D88E00090087 /* Resources */,
+				6DA7C5AE30778B5E00D68C8D /* CopyFiles */,
 				6D3E789F20C87CB30068D66D /* Run Script - tool */,
 				6DD58E9A228CD6500034117D /* Run Script - quicklook */,
 			);
@@ -126,11 +170,31 @@
 				6D76335220CD9C5F003175E1 /* PBXBuildRule */,
 			);
 			dependencies = (
+				6DA7C5AB307789D500D68C8D /* PBXTargetDependency */,
 			);
 			name = "Send via Outlook";
 			productName = Test;
 			productReference = 6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */;
 			productType = "com.apple.product-type.application";
+		};
+		6DA7C5A0307786E000D68C8D /* tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7C5A5307786E000D68C8D /* Build configuration list for PBXNativeTarget "tool" */;
+			buildPhases = (
+				6DA7C59D307786E000D68C8D /* Sources */,
+				6DA7C59E307786E000D68C8D /* Frameworks */,
+				6DA7C59F307786E000D68C8D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tool;
+			packageProductDependencies = (
+			);
+			productName = tool;
+			productReference = 6DA7C5A1307786E000D68C8D /* tool */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -150,6 +214,9 @@
 							};
 						};
 					};
+					6DA7C5A0307786E000D68C8D = {
+						CreatedOnToolsVersion = 27.0;
+					};
 				};
 			};
 			buildConfigurationList = BBFCC2492099A0BF00685DCF /* Build configuration list for PBXProject "Send via Outlook" */;
@@ -167,6 +234,7 @@
 			projectRoot = "";
 			targets = (
 				6D9D58D620C5D88E00090087 /* Send via Outlook */,
+				6DA7C5A0307786E000D68C8D /* tool */,
 			);
 		};
 /* End PBXProject section */
@@ -191,7 +259,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}",
+				"${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/tool",
 			);
 			name = "Run Script - tool";
 			outputPaths = (
@@ -199,8 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# For the PDF WrokFlow to work, there must be an executable called \"tool\" in the \"Resources\" folder\ncp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# For the PDF WorkFlow to work, there must be an executable called \"tool\" in the \"Resources\" folder\ncp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 		};
 		6DD58E9A228CD6500034117D /* Run Script - quicklook */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -235,7 +302,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DA7C59D307786E000D68C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DA7C5A83077878200D68C8D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6DA7C5AB307789D500D68C8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DA7C5A0307786E000D68C8D /* tool */;
+			targetProxy = 6DA7C5AA307789D500D68C8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BBA182F82099DBAD00BACE5D /* InfoPlist.strings */ = {
@@ -303,6 +386,42 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = pdfworkflow;
+			};
+			name = Release;
+		};
+		6DA7C5A6307786E000D68C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6DA7C5A7307786E000D68C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -435,6 +554,15 @@
 			buildConfigurations = (
 				6D9D58E820C5D88F00090087 /* Debug */,
 				6D9D58E920C5D88F00090087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7C5A5307786E000D68C8D /* Build configuration list for PBXNativeTarget "tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7C5A6307786E000D68C8D /* Debug */,
+				6DA7C5A7307786E000D68C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
