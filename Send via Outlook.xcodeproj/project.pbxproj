@@ -6,6 +6,10 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6DA7C5B43077928900D68C8D /* tool in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DA7C5A1307786E000D68C8D /* tool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXBuildRule section */
 		6D76335220CD9C5F003175E1 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -23,31 +27,61 @@
 		};
 /* End PBXBuildRule section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6DA7C5B33077928100D68C8D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				6DA7C5B43077928900D68C8D /* tool in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6D20EB7620CC05EA00CACEE1 /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = System/Library/Frameworks/AppleScriptKit.framework; sourceTree = SDKROOT; };
 		6D3E789020C740910068D66D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6D3E789220C741470068D66D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Send via Outlook.pdfworkflow"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DA7C5A1307786E000D68C8D /* tool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tool; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE7B5DD209B5ED300D0ECA1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6DE7B5DE209B9E1A00D0ECA1 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		6DC8924A307E3A50009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		6DC8916F30790A6D009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Entitlements.plist,
 				Info.plist,
 			);
 			target = 6D9D58D620C5D88E00090087 /* Send via Outlook */;
 		};
+		6DC8917430790AE6009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				main.m,
+			);
+			target = 6DA7C5A0307786E000D68C8D /* tool */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		6DC8923E307E3A4F009B2B0A /* Send via Outlook */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6DC8924A307E3A50009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Send via Outlook"; sourceTree = "<group>"; };
+		6DC8916630790A6C009B2B0A /* Send via Outlook */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6DC8916F30790A6D009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Send via Outlook"; sourceTree = "<group>"; };
+		6DC8917130790A84009B2B0A /* tool */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6DC8917430790AE6009B2B0A /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = tool; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6D9D58D420C5D88E00090087 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DA7C59E307786E000D68C8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,9 +104,10 @@
 		BBFCC2452099A0BF00685DCF = {
 			isa = PBXGroup;
 			children = (
+				6DC8917130790A84009B2B0A /* tool */,
 				6DE7B5DE209B9E1A00D0ECA1 /* Images */,
 				6DE7B5DD209B5ED300D0ECA1 /* README.md */,
-				6DC8923E307E3A4F009B2B0A /* Send via Outlook */,
+				6DC8916630790A6C009B2B0A /* Send via Outlook */,
 				BBFCC24F2099A0BF00685DCF /* Products */,
 				6D3E788F20C740900068D66D /* Frameworks */,
 			);
@@ -82,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */,
+				6DA7C5A1307786E000D68C8D /* tool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,8 +132,8 @@
 				6D9D58D320C5D88E00090087 /* Sources */,
 				6D9D58D420C5D88E00090087 /* Frameworks */,
 				6D9D58D520C5D88E00090087 /* Resources */,
-				6D3E789F20C87CB30068D66D /* Run Script - tool */,
 				6DD58E9A228CD6500034117D /* Run Script - quicklook */,
+				6DA7C5B33077928100D68C8D /* CopyFiles */,
 			);
 			buildRules = (
 				6D76335220CD9C5F003175E1 /* PBXBuildRule */,
@@ -105,12 +141,30 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				6DC8923E307E3A4F009B2B0A /* Send via Outlook */,
+				6DC8916630790A6C009B2B0A /* Send via Outlook */,
 			);
 			name = "Send via Outlook";
 			productName = Test;
 			productReference = 6D9D58D720C5D88E00090087 /* Send via Outlook.pdfworkflow */;
 			productType = "com.apple.product-type.application";
+		};
+		6DA7C5A0307786E000D68C8D /* tool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DA7C5A5307786E000D68C8D /* Build configuration list for PBXNativeTarget "tool" */;
+			buildPhases = (
+				6DA7C59D307786E000D68C8D /* Sources */,
+				6DA7C59E307786E000D68C8D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tool;
+			packageProductDependencies = (
+			);
+			productName = tool;
+			productReference = 6DA7C5A1307786E000D68C8D /* tool */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -130,6 +184,9 @@
 							};
 						};
 					};
+					6DA7C5A0307786E000D68C8D = {
+						CreatedOnToolsVersion = 27.0;
+					};
 				};
 			};
 			buildConfigurationList = BBFCC2492099A0BF00685DCF /* Build configuration list for PBXProject "Send via Outlook" */;
@@ -147,6 +204,7 @@
 			projectRoot = "";
 			targets = (
 				6D9D58D620C5D88E00090087 /* Send via Outlook */,
+				6DA7C5A0307786E000D68C8D /* tool */,
 			);
 		};
 /* End PBXProject section */
@@ -162,23 +220,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6D3E789F20C87CB30068D66D /* Run Script - tool */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${TARGET_BUILD_DIR}/${EXECUTABLE_PATH}",
-			);
-			name = "Run Script - tool";
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/tool",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# For the PDF WrokFlow to work, there must be an executable called \"tool\" in the \"Resources\" folder\ncp \"${SCRIPT_INPUT_FILE_0}\" \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6DD58E9A228CD6500034117D /* Run Script - quicklook */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,7 +234,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Thumbnail.icns",
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/QuickLook/Preview.icns",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -210,6 +251,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DA7C59D307786E000D68C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -217,6 +265,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Send via Outlook/Entitlements.plist";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -224,6 +274,7 @@
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
 				INSTALL_PATH = "\"~/Library/PDF Services\"";
@@ -242,14 +293,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Send via Outlook/Entitlements.plist";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				INFOPLIST_FILE = "Send via Outlook/Info.plist";
 				INSTALL_PATH = "\"~/Library/PDF Services\"";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -260,7 +314,60 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				WRAPPER_EXTENSION = pdfworkflow;
+			};
+			name = Release;
+		};
+		6DA7C5A6307786E000D68C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Send via Outlook/Entitlements.plist";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6DA7C5A7307786E000D68C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "Send via Outlook/Entitlements.plist";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				DEVELOPMENT_TEAM = 38G5P3YVC2;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				INFOPLIST_FILE = "Send via Outlook/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lobger.pdfworkflow.outlook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -393,6 +500,15 @@
 			buildConfigurations = (
 				6D9D58E820C5D88F00090087 /* Debug */,
 				6D9D58E920C5D88F00090087 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DA7C5A5307786E000D68C8D /* Build configuration list for PBXNativeTarget "tool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DA7C5A6307786E000D68C8D /* Debug */,
+				6DA7C5A7307786E000D68C8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
