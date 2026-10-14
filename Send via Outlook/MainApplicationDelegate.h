@@ -13,4 +13,3 @@
 @property (nullable, strong) NSURL* fileURL;
 
 @end
-

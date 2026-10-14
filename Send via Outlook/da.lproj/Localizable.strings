@@ -10,4 +10,6 @@
 "alert.message.parameters" = "Antallet af parametre er forkert.\nFormat: titel options pdffile";
 "alert.message.filenotfound" = "Kan ikke finde filen:\n%@";
 
+"message.subject" = "Deler filen: %@";
+
 "window.title"="Email via Outlook";

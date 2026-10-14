@@ -68,10 +68,14 @@ int main(int argc, const char* argv[])
     NSString *name = [[pdfWorkflowApp.lastPathComponent stringByDeletingPathExtension] stringByAppendingPathExtension:@"app"];
     NSURL *destURL = [[NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES] URLByAppendingPathComponent:name isDirectory:YES];
 
-    NSFileManager *fm = [NSFileManager defaultManager];
-    [fm removeItemAtURL:destURL error:nil]; // copy fails if the destination already exists
-
     NSError *error = nil;
+    
+    // copy fails if the destination already exists
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if (![fm removeItemAtURL:destURL error:&error]) {
+        os_log_error(OS_LOG_DEFAULT, "Remove failed %{public}@", error);
+    }
+
     if (![fm copyItemAtURL:bundle.bundleURL toURL:destURL error:&error]) {
         printf("Copy failed %s\n", error.description.UTF8String);
         os_log_error(OS_LOG_DEFAULT, "Copy failed %{public}@", error);
