@@ -58,16 +58,8 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "&quot;This is the options&quot;"
+            argument = "com.apple.print.PrintSettings.PMOutputFilename=file://${HOME}/Library/PDF%20Services/Send%20via%20Outlook.pdfworkflow"
             isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "../../../README.md"
-            isEnabled = "NO">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "../../README.md"
-            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "$(SRCROOT)/README.md"
