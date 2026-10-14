@@ -10,6 +10,7 @@
 
 @interface MainApplicationDelegate : NSObject <NSApplicationDelegate>
 
+@property (nullable, strong) NSURL* fileURL;
 
 @end
 
