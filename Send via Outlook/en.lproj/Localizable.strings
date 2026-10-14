@@ -10,4 +10,6 @@
 "alert.message.parameters" = "The number of parameters are incorrect.\nUsage: title options pdffile";
 "alert.message.filenotfound" = "Cannot find the file:\n%@";
 
+"message.subject" = "Sharing file: %@";
+
 "window.title"="Send via Outlook";
