@@ -10,113 +10,106 @@
 @import AppKit; // NSWorkspace
 @import os.log;
 
-//#include <cups/cups.h>   // link against libcups.tbd
 
-//static NSDictionary<NSString *, NSString *> *ParseCUPSOptions(NSString *string)
-//{
-//    cups_option_t *options = NULL;
-//    int count = cupsParseOptions(string.UTF8String, 0, &options);
-//
-//    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:count];
-//    for (int i = 0; i < count; i++) {
-//        NSString *key   = [NSString stringWithUTF8String:options[i].name];
-//        NSString *value = [NSString stringWithUTF8String:options[i].value ?: ""];
-//        if (key && value) {
-//            result[key] = value;
-//        }
-//    }
-//    cupsFreeOptions(count, options);
-//    return result;
-//}
-//
+static void StoreTyped(NSMutableDictionary *result, NSString *key, NSString *value) {
+    if ([key hasSuffix:@"..n."]) {
+        result[[key substringToIndex:key.length - 4]] = @(value.longLongValue);
+    } else if ([key hasSuffix:@"..b."]) {
+        result[[key substringToIndex:key.length - 4]] =
+            @([value caseInsensitiveCompare:@"True"] == NSOrderedSame);
+    } else {
+        result[key] = [value copy];
+    }
+}
+
+NSDictionary<NSString *, id> *ParsePrintOptions(NSString *string) {
+    cups_option_t *options = NULL;
+    int count = cupsParseOptions(string.UTF8String, 0, &options);
+
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        StoreTyped(result, @(options[i].name), @(options[i].value));
+    }
+    cupsFreeOptions(count, options);
+    return result;
+}
+
+
 int main(int argc, const char* argv[])
 {
     if (argc <= 3)
     {
-        
         printf("The number of parameters are incorrect.\nUsage: tool title options pdffile");
+        os_log_error(OS_LOG_DEFAULT, "The number of parameters are incorrect.\nUsage: tool title options pdffile");
         return 1;
     }
     
-    NSString* paramTitle = [NSString stringWithUTF8String:argv[1]];
-    NSString* paramOptions = [NSString stringWithUTF8String:argv[2]];
-    NSString* paramFilePath = [NSString stringWithUTF8String:argv[3]];
+    NSDictionary *parameters = @{
+        @"title":   @(argv[1]),
+        @"options": ParsePrintOptions(@(argv[2])),
+    };
+
+    NSURL *pdfWorkflowApp = [[NSURL fileURLWithPath:@(argv[0])] URLByAppendingPathComponent:@"../../.."].URLByStandardizingPath;
     
-    os_log(OS_LOG_DEFAULT, "SEND VIA OUTLOOK:\n\tTitle: %{public}@\n\tFilepath: %{public}@\n\tOptions: %{public}@", paramTitle, paramFilePath, paramOptions);
-//    if (paramOptions.length > 0) {
-//        NSDictionary<NSString *, NSString *> *options = ParseCUPSOptions(paramOptions);
-//        [options enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop) {
-//            os_log(OS_LOG_DEFAULT, "%{public}@ = %{public}@", key, value);
-//        }];
-//    }
+    // Ensure we are situated in the pdf workflow package
+    NSBundle *bundle = [NSBundle bundleWithURL:pdfWorkflowApp];
+    if (!bundle.executableURL) {
+        // bundle not found - let's try the options
+        NSString *pmOutputFilename = parameters[@"options"][@"com.apple.print.PrintSettings.PMOutputFilename"];
+        bundle = [NSBundle bundleWithURL:[NSURL URLWithString:pmOutputFilename]];
+        if (!bundle.executableURL) {
+            printf("Cannot find original pdf workflow");
+            os_log_error(OS_LOG_DEFAULT, "Cannot find original pdf workflow");
+            return 2;
+        }
+    }
 
     
-////    NSURL *appURL = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Send via Outlook.pdfworkflow"];
-//    NSURL *appURL = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Send via Outlook.pdfworkflow/Contents/MacOS/Send via Outlook"];
-////    NSURL *appURL = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:@"com.apple.TextEdit"];
-//
-//    NSWorkspaceOpenConfiguration *config = [NSWorkspaceOpenConfiguration configuration];
-//    config.arguments = @[paramTitle, paramOptions, paramFilePath];
-//    config.createsNewApplicationInstance = YES; // optional: arguments are ignored if the app is already running
-//
-//    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
-//    __block NSRunningApplication *launchedApp = nil;
-//    __block NSError *launchError = nil;
-//
-//    [[NSWorkspace sharedWorkspace] openApplicationAtURL:appURL
-//                                          configuration:config
-//                                      completionHandler:^(NSRunningApplication *app, NSError *error) {
-//        launchedApp = app;
-//        launchError = error;
-//        dispatch_semaphore_signal(sem);
-//    }];
-//    
-//
-//    dispatch_semaphore_wait(sem, dispatch_time(DISPATCH_TIME_NOW, 10 * NSEC_PER_SEC)); // with timeout
-//
-//    if (launchError) {
-//        os_log(OS_LOG_DEFAULT, "Launch failed: %{public}@", launchError);
-//    }
+    NSString *name = [[pdfWorkflowApp.lastPathComponent stringByDeletingPathExtension] stringByAppendingPathExtension:@"app"];
+    NSURL *destURL = [[NSURL fileURLWithPath:NSTemporaryDirectory() isDirectory:YES] URLByAppendingPathComponent:name isDirectory:YES];
 
-//    NSTask *task = [[NSTask alloc] init];
-//    task.executableURL = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Send via Outlook.pdfworkflow/Contents/MacOS/Send via Outlook"];
-////    task.executableURL = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Send via Outlook.app"];
-//    task.arguments = @[paramTitle, paramOptions, paramFilePath];
-//
-//    NSError *error = nil;
-//    if (![task launchAndReturnError:&error]) {
-//        os_log(OS_LOG_DEFAULT, "Launch failed: %{public}@", error);
-//        return 2;
-//    }
-//    
-//    [task waitUntilExit];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    [fm removeItemAtURL:destURL error:nil]; // copy fails if the destination already exists
 
-    
-    
-    
-    
-    
-    NSURL *pdf = [NSURL fileURLWithPath:paramFilePath];
-//    NSURL *helper = [NSURL fileURLWithPath:@"/Applications/Send via Outlook Helper.app"];
-    NSURL *helper = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Helpers/Send via Outlook - helper.app"];
-//    NSURL *helper = [NSURL fileURLWithPath:@"/Users/ml/Library/PDF Services/Send via Outlook.pdfworkflow/Contents/MacOS/Send via Outlook"];
+    NSError *error = nil;
+    if (![fm copyItemAtURL:bundle.bundleURL toURL:destURL error:&error]) {
+        printf("Copy failed %s\n", error.description.UTF8String);
+        os_log_error(OS_LOG_DEFAULT, "Copy failed %{public}@", error);
+        return 3;
+    }
+
+    NSURL *pdfURL = [NSURL fileURLWithPath:@(argv[3])];
+    os_log_debug(OS_LOG_DEFAULT, "SVO: Filepath: %{public}@", pdfURL);
+
+    NSURL *paramsURL = [pdfURL URLByAppendingPathExtension:@"plist"];
+
+    error = nil;
+    if (![parameters writeToURL:paramsURL error:&error]) {
+        printf("Writing parameters failed %s\n", error.description.UTF8String);
+        os_log_error(OS_LOG_DEFAULT, "Writing parameters failed %{public}@", error);
+        return 4;
+    }
 
     NSWorkspaceOpenConfiguration *config = [NSWorkspaceOpenConfiguration configuration];
-    config.arguments = @[paramTitle, paramOptions, paramFilePath];   // optional: pass the title along
+    config.createsNewApplicationInstance = YES;
 
     dispatch_semaphore_t done = dispatch_semaphore_create(0);
-    [[NSWorkspace sharedWorkspace] openURLs:@[pdf]
-                       withApplicationAtURL:helper
+
+    __block NSError *openError = nil;
+    [[NSWorkspace sharedWorkspace] openURLs:@[pdfURL]
+                       withApplicationAtURL:destURL
                               configuration:config
                           completionHandler:^(NSRunningApplication *app, NSError *error) {
-        if (error) {
-            os_log_error(OS_LOG_DEFAULT, "Hand-off failed: %{public}@", error);
-        }
+        openError = error;
         dispatch_semaphore_signal(done);
     }];
+
     dispatch_semaphore_wait(done, dispatch_time(DISPATCH_TIME_NOW, 10 * NSEC_PER_SEC));
     
-    
-    
+    if (openError) {
+        os_log_error(OS_LOG_DEFAULT, "SVO: Hand-off failed: %{public}@", openError);
+        return 5;
+    }
+
     return 0;
 }
