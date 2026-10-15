@@ -22,3 +22,11 @@
 - (int)sendToOutlook:(NSString* __nonnull)file withTitle:(NSString* __nullable)title andOptions:(NSDictionary* __nullable)options;
 
 @end
+
+
+@interface MainApplicationDelegate (PDF)
+
+- (Boolean)updatePDFURL:(NSURL* __nonnull)pdfURL withAuthor:(NSString* __nonnull)author;
+
+@end
+

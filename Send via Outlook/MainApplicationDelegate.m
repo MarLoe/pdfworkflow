@@ -31,6 +31,7 @@
             title = [NSString stringWithFormat:NSLocalizedString(@"message.subject", -), fileName];
         }
 
+        [self updatePDFURL:self.fileURL withAuthor:NSFullUserName()];
         [self sendToOutlook:self.fileURL.path withTitle:title andOptions:parameters];
     }
     
