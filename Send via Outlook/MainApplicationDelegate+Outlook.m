@@ -7,7 +7,7 @@
 //
 
 @import os.log;
-#import "MainApplicationDelegate+Outlook.h"
+#import "MainApplicationDelegate.h"
 #import "alert.h"
 
 #ifndef kASAppleScriptSuite
@@ -25,7 +25,7 @@
 
 @implementation MainApplicationDelegate (Outlook)
 
-- (int)sendToOutlook:(NSString*)file withTitle:(NSString*)title andOptions:(NSString*)options
+- (int)sendToOutlook:(NSString*)file withTitle:(NSString*)title andOptions:(NSDictionary*)options
 {
     os_log_debug(OS_LOG_DEFAULT, "SVO: %{public}@", file);
 

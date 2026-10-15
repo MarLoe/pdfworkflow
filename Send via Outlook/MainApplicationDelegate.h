@@ -13,3 +13,20 @@
 @property (nullable, strong) NSURL* fileURL;
 
 @end
+
+
+@interface MainApplicationDelegate (Outlook)
+
+/// Sends the given file as an attachment via Microsoft Outlook using the bundled "Send" AppleScript.
+/// Returns 0 on success, or a non-zero exit code describing the failure.
+- (int)sendToOutlook:(NSString* __nonnull)file withTitle:(NSString* __nullable)title andOptions:(NSDictionary* __nullable)options;
+
+@end
+
+
+@interface MainApplicationDelegate (PDF)
+
+- (Boolean)updatePDFURL:(NSURL* __nonnull)pdfURL withAuthor:(NSString* __nonnull)author;
+
+@end
+

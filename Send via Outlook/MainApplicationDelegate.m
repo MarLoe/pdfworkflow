@@ -8,7 +8,6 @@
 
 @import os.log;
 #import "MainApplicationDelegate.h"
-#import "MainApplicationDelegate+Outlook.h"
 
 
 @implementation MainApplicationDelegate
@@ -32,7 +31,8 @@
             title = [NSString stringWithFormat:NSLocalizedString(@"message.subject", -), fileName];
         }
 
-        [self sendToOutlook:self.fileURL.path withTitle:title andOptions:@""];
+        [self updatePDFURL:self.fileURL withAuthor:NSFullUserName()];
+        [self sendToOutlook:self.fileURL.path withTitle:title andOptions:parameters];
     }
     
     [NSApp terminate:nil];
