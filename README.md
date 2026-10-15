@@ -4,6 +4,10 @@
 
 Send your documents as PDF via Microsoft Outlook.
 
+**UPDATE 2026.10.14:**
+I finally made time to fix this project. It now works again 😀
+
+
 ## Introduction
 
 On MacOS you can "print" to PDF. Among the options you have, is sending the print as PDF using Apple Mail application.
